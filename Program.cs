@@ -1,4 +1,4 @@
-﻿//Программа принимает на вход трёхзначное число
+//Программа принимает на вход трёхзначное число
 // и на выходе показывает вторую цифру этого числа.
 /*
 
@@ -22,30 +22,24 @@ Console.WriteLine("Второе число: " + number);
 
 /*
 
-Console.Write(TNum());
-int TNum(){
-Console.WriteLine("Введите число : " );
-int num = Convert.ToInt32(Console.ReadLine());
-if(num < 100){
-Console.WriteLine("Третьей цифры нет ");   
-return 0;
+void TNum(int a){
+    while (a > 999){
 
-}
-else{
+    int ed = a / 10;
+    a = ed;
 
-if(num > 999){
-while(num > 999){
-num = num / 10;
+    } 
+    if (a <= 999){
+    int dec = a % 10;
+    Console.WriteLine("Третья цифра : " + dec );
+    } 
+    if ( a < 100){
+    Console.WriteLine("Третьей цифры нет");
     }
-}
-else{
-    num = num % 10;
-}
-}
-int result = num % 10;
-return result;
-
-}
+ }
+ Console.WriteLine("Введите число");
+ int a = Convert.ToInt32(Console.ReadLine());
+ TNum(a);
 
 */
 
@@ -54,56 +48,20 @@ return result;
 // и проверяет, является ли этот день выходным.
 /*
 
-Console.Write("Введите цифру дня недели: ");
-int num = Convert.ToInt32(Console.ReadLine());
-
-void ChoiseDay (int num){
-  if (num == 6 || num == 7){
+void ChoiseDay(int num){
+  if (num > 5 && num <= 7){
   Console.WriteLine("Выходной ");
   }
-  else if (num < 1 || num > 7) {
+  else if (num <= 0 || num > 7) {
   Console.WriteLine("Это не то ");
   }
   else
-  Console.WriteLine("Не выходной ");
+  Console.WriteLine("Рабочие будни ");
 
 }
-
-ChoiseDay(num);
-
-*/
- 
- 
- 
- 
- 
-  /*  
- //Хотел создать нерандомное решение первой задачи, 
- //но так и не нашел ошибку... 
- //Почему программа выдает третье число вместо второго?
- 
-Console.Write(TNum());
-int TNum(){
-Console.WriteLine("Введите трехзначное число : " );
+Console.Write("Введите число дня недели: ");
 int num = Convert.ToInt32(Console.ReadLine());
-if(num <= 100){
-return 0;
-
-}
-else{
- 
-if(num <= 999)
-  while(num > 999){
-num = num / 10;  
-}
-else{
-    num = num % 10;
-}
-}
-int result = num % 10;
-return result;
-
-}
+ChoiseDay(num);
 
 */
     
